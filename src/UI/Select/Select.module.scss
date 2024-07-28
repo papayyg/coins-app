@@ -1,0 +1,33 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.label {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 109%;
+}
+
+.select {
+    border: 1px solid #000;
+    background-color: transparent;
+    max-width: 374px;
+    padding: 12px;
+
+    appearance: none;
+    font-size: 18px;
+    font-weight: 300;
+    position: relative;
+
+    background-image: url("../../assets/images/icons/arrow.svg");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px 6px;
+}
+
+.option {
+    font-size: 18px;
+    font-weight: 300;
+}

@@ -1,0 +1,37 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.label {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 109%;
+}
+
+.wrapper {
+    display: flex;
+    gap: 16px;
+}
+
+.inputBox {
+    display: flex;
+	align-items: center;
+    gap: 9px;
+}
+
+.text {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 109%;
+}
+
+.input {
+    max-width: 155px;
+    border: 1px solid #000;
+    padding: 12px;
+
+    font-size: 18px;
+    font-weight: 300;
+}

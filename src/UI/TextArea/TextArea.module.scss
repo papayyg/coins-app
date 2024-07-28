@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 109%;
+}
+
+textarea {
+    max-width: 374px;
+    max-height: 136px;
+
+    border: 1px solid #000;
+    resize: none;
+    padding: 12px;
+    background: transparent;
+
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 121%;
+}

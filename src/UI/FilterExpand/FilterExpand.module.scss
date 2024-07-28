@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+	align-items: center;
+    gap: 8px;
+	
+	width: max-content;
+	cursor: pointer;
+}
+
+.text {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 109%;
+    text-decoration-line: underline;
+}
+
+svg {
+	transition: all 0.2s;
+}

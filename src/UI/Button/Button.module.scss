@@ -1,0 +1,23 @@
+.button {
+    padding: 16px 38px;
+    background: #833ae0;
+
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+
+	cursor: pointer;
+	transition: all 0.3s;
+	
+	&:hover {
+		background: #662eaf;
+	}
+}
+
+.secondButton {
+	background: #E1E1E1;
+	color: #000;
+	&:hover {
+		background: #a5a4a4
+	}
+}
