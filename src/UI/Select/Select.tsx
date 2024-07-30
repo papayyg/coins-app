@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./Select.module.scss";
 
 interface Option {
@@ -9,18 +9,18 @@ interface Option {
 interface SelectProps {
     label: string;
     options: Option[];
+    value: string;
+    onChange: (value: string) => void;
 }
 
-const Select: React.FC<SelectProps> = ({ label, options }) => {
-    const [selectedValue, setSelectedValue] = useState<string>("");
-
+const Select: React.FC<SelectProps> = ({ label, options, value, onChange }) => {
     return (
         <div className={styles.container}>
             <label className={styles.label}>{label}</label>
             <select
                 className={styles.select}
-                onChange={(event) => setSelectedValue(event.target.value)}
-                value={selectedValue}
+                onChange={(event) => onChange(event.target.value)}
+                value={value}
             >
                 {options.map((option: Option) => (
                     <option key={option.value} value={option.value} className={styles.option}>

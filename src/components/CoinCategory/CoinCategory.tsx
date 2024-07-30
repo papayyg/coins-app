@@ -1,22 +1,24 @@
-import React from 'react'
-import styles from './CoinCategory.module.scss'
+import React from "react";
+import styles from "./CoinCategory.module.scss";
 
 interface CoinCategoryProps {
-	title: string;
-	img: string;
-	link: string;
+    name: string;
+    img: string;
+    handleClick: (name: string) => void;
 }
 
-const CoinCategory: React.FC<CoinCategoryProps> = ({title, img, link}) => {
-  return (
-	<div className={styles.category}>
-		<h3 className={styles.categoryTitle}>{title}</h3>
-		<a href={link} className={styles.categoryMore}>Show all</a>
-		<div className={styles.categoryImg}>
-			<img src={img} alt="coin" />
-		</div>
-	</div>
-  )
-}
+const CoinCategory: React.FC<CoinCategoryProps> = ({ name, img, handleClick }) => {
+    return (
+        <div className={styles.category}>
+            <h3 className={styles.categoryTitle}>{name}</h3>
+            <p className={styles.categoryMore} onClick={() => handleClick(name)}>
+                Show all
+            </p>
+            <div className={styles.categoryImg}>
+                <img src={img} alt="coin" />
+            </div>
+        </div>
+    );
+};
 
-export default CoinCategory
+export default CoinCategory;

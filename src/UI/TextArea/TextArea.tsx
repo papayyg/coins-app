@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "./TextArea.module.scss";
 
-interface TextArea {
+interface TextAreaProps {
     label: string;
 }
 
-const TextArea: React.FC<TextArea> = ({ label }) => {
+const TextArea: React.FC<TextAreaProps> = ({ label }) => {
     return (
         <div className={styles.container}>
             <label>{label}</label>

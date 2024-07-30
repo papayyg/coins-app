@@ -1,15 +1,17 @@
 import React from "react";
 import styles from "./CoinCard.module.scss";
+import { Link } from "react-router-dom";
 
 interface CoinCardProps {
     title: string;
     descr: string;
     img: string;
+    link: string;
 }
 
-const CoindCard: React.FC<CoinCardProps> = ({ title, descr, img }) => {
+const CoindCard: React.FC<CoinCardProps> = ({ title, descr, img, link }) => {
     return (
-        <div className={styles.card}>
+        <Link to={link} className={styles.card}>
             <div className={styles.cardImg}>
                 <img src={img} alt="coin" />
             </div>
@@ -17,7 +19,7 @@ const CoindCard: React.FC<CoinCardProps> = ({ title, descr, img }) => {
                 <h4 className={styles.cardTitle}>{title}</h4>
                 <p className={styles.cardDescr}>{descr}</p>
             </div>
-        </div>
+        </Link>
     );
 };
 

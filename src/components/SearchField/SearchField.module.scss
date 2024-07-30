@@ -1,0 +1,11 @@
+.container {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.search {
+    display: flex;
+    align-items: flex-end;
+    gap: 30px;
+}

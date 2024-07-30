@@ -3,20 +3,15 @@ import Arrow from "../../assets/svg/Arrow";
 import styles from "./FilterExpand.module.scss";
 
 interface FilterExpandProps {
-    opened: boolean;
+    isOpen: boolean;
+    handleClick: () => void;
 }
 
-const FilterExpand: React.FC<FilterExpandProps> = ({ opened }) => {
-    const [isOpen, setIsOpen] = useState<boolean>(opened);
-
-    const handleClick = () => {
-        setIsOpen(!isOpen);
-    };
-
+const FilterExpand: React.FC<FilterExpandProps> = ({ isOpen, handleClick }) => {
     return (
         <div className={styles.container} onClick={handleClick}>
             <p className={styles.text}>Advanced filter</p>
-            <Arrow style={isOpen ? { transform: "rotate(180deg)" } : {}} />
+            <Arrow style={!isOpen ? { transform: "rotate(180deg)" } : {}} />
         </div>
     );
 };

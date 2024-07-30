@@ -1,13 +1,19 @@
+.container {
+    position: relative;;
+}
+
 h1 {
     font-size: 50px;
     font-weight: 300;
 }
 
-p {
+.descr {
     color: #b1abab;
     font-size: 10px;
     font-weight: 500;
     line-height: 109%;
+    position: absolute;
+    bottom: -5px;
 }
 
 span {
