@@ -1,10 +1,10 @@
-import { keepPreviousData, useQuery, UseQueryResult } from '@tanstack/react-query';
-import { fetchCoinsList, Coin } from '../api/coinsListApi';
+import { useQuery, UseQueryResult } from "@tanstack/react-query";
+import { fetchCoinsList, CoinListRespone } from "../api/coinsListApi";
 
-export const useCoinsList = (): UseQueryResult<Coin[]> => {
+export const useCoinsList = (): UseQueryResult<CoinListRespone> => {
     return useQuery({
-        queryKey: ['coinList'],
+        queryKey: ["coinList"],
         queryFn: fetchCoinsList,
-		placeholderData: keepPreviousData
+        refetchOnWindowFocus: false,
     });
 };

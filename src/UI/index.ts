@@ -5,3 +5,4 @@ export { default as FilterExpand } from "./FilterExpand/FilterExpand";
 export { default as Select } from "./Select/Select";
 export { default as FromTo } from "./FromTo/FromTo";
 export { default as TextArea } from "./TextArea/TextArea";
+export { default as Loader } from "./Loader/Loader";

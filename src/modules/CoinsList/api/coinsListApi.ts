@@ -8,7 +8,12 @@ export interface Coin {
     obverseImageLink: string;
 }
 
-export const fetchCoinsList = (): Promise<Coin[]> => {
+export interface CoinListRespone {
+    count: number;
+    data: Coin[];
+}
+
+export const fetchCoinsList = (): Promise<CoinListRespone[]> => {
     const { category, storeQuery, country, metal, quality, priceFrom, priceTo, yearFrom, yearTo, count, pageNumber } = useSearchQueryStore.getState();
     const params = {
         category,
@@ -24,5 +29,5 @@ export const fetchCoinsList = (): Promise<Coin[]> => {
         offset: (pageNumber - 1) * count,
     };
 
-    return apiRequest.get<Coin[]>("/list", params);
+    return apiRequest.get<CoinListRespone[]>("/list", params);
 };

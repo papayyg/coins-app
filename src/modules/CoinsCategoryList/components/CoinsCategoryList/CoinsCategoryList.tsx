@@ -7,14 +7,15 @@ import { useCoinCategories } from "../../queries/useCoinCategories";
 
 import styles from "./CoinsCategoryList.module.scss";
 import { useNavigate } from "react-router-dom";
+import { Loader } from "../../../../UI";
 
 const CoinsCategoryList: React.FC = () => {
     const navigate = useNavigate();
     const { data, error, isLoading } = useCoinCategories();
-    const { changeCategory } = useSearchQueryStore();
+    const { changeCategory, changeCount, changePageNumber } = useSearchQueryStore();
 
     if (isLoading) {
-        return <div>Loading...</div>;
+        return <Loader />;
     }
 
     if (error instanceof Error) {
@@ -23,6 +24,8 @@ const CoinsCategoryList: React.FC = () => {
 
     const handleClick = (name: string) => {
         changeCategory(name);
+        changeCount(6);
+        changePageNumber(1);
         navigate("/coins");
     };
 

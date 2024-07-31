@@ -21,7 +21,7 @@ interface SearchQueryState {
     changePriceTo: (priceTo: string) => void;
     changeYearFrom: (yearFrom: string) => void;
     changeYearTo: (yearTo: string) => void;
-    changeCount: (amount: number) => void;
+    changeCount: (count: number) => void;
     changePageNumber: (pageNumber: number) => void;
 }
 
@@ -35,7 +35,7 @@ export const useSearchQueryStore = create<SearchQueryState>((set) => ({
     priceTo: "",
     yearFrom: "",
     yearTo: "",
-    count: 0,
+    count: 6,
     pageNumber: 1,
     changeCategory: (category: string) => set({ category }),
     changeQuery: (storeQuery: string) => set({ storeQuery }),

@@ -1,67 +1,30 @@
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { useFilterState } from "../../hooks/useFilterState";
+import { useLocation, useNavigate } from "react-router-dom";
 import { FilterSection, SearchField } from "../../../../components";
 import { useFilterStore } from "../../store/useFilterStore";
 
 import styles from "./SearchAndFilter.module.scss";
 import { useSearchQueryStore } from "../../../../store/searchQuery";
+import { useQueryClient } from "@tanstack/react-query";
 
 const SearchAndFilter = () => {
-    const {
-        storeQuery,
-        country,
-        changeQuery,
-        changeCountry,
-        changeMetal,
-        changeQuality,
-        changePriceFrom,
-        changePriceTo,
-        changeYearFrom,
-        changeYearTo,
-    } = useSearchQueryStore((state) => ({
-        storeQuery: state.storeQuery,
-        country: state.country,
-        changeQuery: state.changeQuery,
-        changeCategory: state.changeCategory,
-        changeCountry: state.changeCountry,
-        changeMetal: state.changeMetal,
-        changeQuality: state.changeQuality,
-        changePriceFrom: state.changePriceFrom,
-        changePriceTo: state.changePriceTo,
-        changeYearFrom: state.changeYearFrom,
-        changeYearTo: state.changeYearTo,
-    }));
+    const { storeQuery, changeQuery, changeCategory, ...changeFilters } = useSearchQueryStore((state) => state);
 
     const navigate = useNavigate();
+    const location = useLocation();
     const { filterIsOpen } = useFilterStore();
-    const [query, setQuery] = useState("");
-    const filterProps = useFilterState();
+    const queryClient = useQueryClient();
 
     const handleSearch = () => {
-        changeQuery(query);
-        if (filterProps.country) changeCountry(filterProps.country);
-        if (filterProps.metal) changeMetal(filterProps.metal);
-        if (filterProps.quality) changeQuality(filterProps.quality);
-        if (filterProps.priceFrom) changePriceFrom(filterProps.priceFrom);
-        if (filterProps.priceTo) changePriceTo(filterProps.priceTo);
-        if (filterProps.yearFrom) changeYearFrom(filterProps.yearFrom);
-        if (filterProps.yearTo) changeYearTo(filterProps.yearTo);
-
-        navigate("/coins");
-        window.location.reload();
+        changeCategory("");
+        if (location.pathname !== "/coins") navigate("/coins");
+        queryClient.invalidateQueries({ queryKey: ["coinList"] });
     };
-
-    useEffect(() => {
-        setQuery(storeQuery);
-        filterProps.setCountry(country);
-    }, []);
 
     return (
         <div className={styles.container}>
-            <SearchField query={query} setQuery={setQuery} onSearch={handleSearch} />
+            <SearchField query={storeQuery} setQuery={changeQuery} onSearch={handleSearch} />
             <div className={`${styles["filter-container"]} ${filterIsOpen ? styles.open : ""}`}>
-                <FilterSection {...filterProps} />
+                <FilterSection {...changeFilters} />
             </div>
         </div>
     );

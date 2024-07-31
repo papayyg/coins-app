@@ -1,16 +1,16 @@
 export interface FilterSectionProps {
     country: string;
-    setCountry: (value: string) => void;
+    changeCountry: (value: string) => void;
     metal: string;
-    setMetal: (value: string) => void;
+    changeMetal: (value: string) => void;
     quality: string;
-    setQuality: (value: string) => void;
+    changeQuality: (value: string) => void;
     priceFrom: string;
-    setPriceFrom: (value: string) => void;
+    changePriceFrom: (value: string) => void;
     priceTo: string;
-    setPriceTo: (value: string) => void;
+    changePriceTo: (value: string) => void;
     yearFrom: string;
-    setYearFrom: (value: string) => void;
+    changeYearFrom: (value: string) => void;
     yearTo: string;
-    setYearTo: (value: string) => void;
+    changeYearTo: (value: string) => void;
 }
