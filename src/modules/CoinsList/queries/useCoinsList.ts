@@ -1,9 +1,10 @@
-import { useQuery, UseQueryResult } from '@tanstack/react-query';
+import { keepPreviousData, useQuery, UseQueryResult } from '@tanstack/react-query';
 import { fetchCoinsList, Coin } from '../api/coinsListApi';
 
 export const useCoinsList = (): UseQueryResult<Coin[]> => {
     return useQuery({
         queryKey: ['coinList'],
-        queryFn: fetchCoinsList
+        queryFn: fetchCoinsList,
+		placeholderData: keepPreviousData
     });
 };

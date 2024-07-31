@@ -35,7 +35,7 @@ export const useSearchQueryStore = create<SearchQueryState>((set) => ({
     priceTo: "",
     yearFrom: "",
     yearTo: "",
-    count: 6,
+    count: 0,
     pageNumber: 1,
     changeCategory: (category: string) => set({ category }),
     changeQuery: (storeQuery: string) => set({ storeQuery }),
