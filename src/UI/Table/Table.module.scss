@@ -1,0 +1,27 @@
+.table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+
+    td {
+        text-align: left;
+        padding: 6px;
+		width: 183px;
+        &:first-child {
+            border-right: 1px solid #b1acac;
+        }
+        border-bottom: 1px solid #b1acac;
+
+        color: #000;
+        font-family: Roboto;
+        font-size: 10px;
+        font-weight: 400;
+        line-height: 105.2%;
+    }
+
+    tr {
+        background: rgba(255, 255, 255, 0.9);
+        &:nth-child(even) {
+            background: #e1e1e1;
+        }
+    }
+}

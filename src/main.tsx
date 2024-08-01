@@ -2,10 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import { ErrorPage, HomePage, ListCoinsPage } from "./pages";
+import { CoinPage, ErrorPage, HomePage, ListCoinsPage } from "./pages";
 
 import "./styles/global.scss";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import AuthorizePage from './pages/AdminPages/AuthorizePage/AuthorizePage';
 
 const router = createBrowserRouter([
     {
@@ -16,6 +17,14 @@ const router = createBrowserRouter([
     {
         path: "/coins",
         element: <ListCoinsPage />,
+    },
+    {
+        path: "/coins/:coinId",
+        element: <CoinPage />,
+    },
+    {
+        path: "/admin",
+        element: <AuthorizePage />,
     },
 ]);
 

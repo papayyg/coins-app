@@ -1,8 +1,8 @@
-import { CoinsList } from "../../modules/CoinsList";
-import { PageHeader } from "../../UI";
-import { SearchAndFilter } from "../../modules/SearchAndFilter";
+import { CoinsList } from "../modules/CoinsList";
+import { PageHeader } from "../UI";
+import { SearchAndFilter } from "../modules/SearchAndFilter";
 
-const ListCoinsPage = () => {
+const ListCoinsPage: React.FC = () => {
     return (
         <>
             <PageHeader title="List of the coins" descr={true} />

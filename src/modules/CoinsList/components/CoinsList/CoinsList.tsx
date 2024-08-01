@@ -15,6 +15,7 @@ const CoinsList = () => {
 
     useEffect(() => {
         refetch();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [pageNumber, count]);
 
     const availableCounts = useMemo(() => {
