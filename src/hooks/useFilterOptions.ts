@@ -8,7 +8,7 @@ interface FilterOptions {
 }
 
 const fetchFilterOptions = async () => {
-    return apiRequest.get<FilterOptions>("/filter");
+    return apiRequest.get<FilterOptions>("/coin/filter");
 };
 
 export const useFilterOptions = (): UseQueryResult<FilterOptions> => {

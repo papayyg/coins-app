@@ -4,16 +4,17 @@ import styles from "./Input.module.scss";
 interface InputProps {
     label: string;
     value: string;
+    type?: string;
     onChange: (value: string) => void;
 }
 
-const Input: React.FC<InputProps> = ({ label, value, onChange }) => {
+const Input: React.FC<InputProps> = ({ label, value, type = "text", onChange }) => {
     return (
         <div className={styles.container}>
             <label className={styles.label}>{label}</label>
             <input
                 className={styles.input}
-                type="text"
+                type={type}
                 value={value}
                 onChange={(event) => onChange(event.target.value)}
             />

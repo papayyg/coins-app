@@ -1,13 +1,12 @@
 import { useEffect, useMemo } from "react";
 
-import { CoinCard } from "../../../../components";
+import { CoinCard, ItemCountSelect, PaginationComponent } from "../../../../components";
 import { Loader } from "../../../../UI";
 
 import { useCoinsList } from "../../queries/useCoinsList";
 import { useSearchQueryStore } from "../../../../store/searchQuery";
 
 import styles from "./CoinsList.module.scss";
-import { FormControl, InputLabel, MenuItem, Pagination, Select } from "@mui/material";
 
 const CoinsList = () => {
     const { data, error, isLoading, refetch } = useCoinsList();
@@ -45,28 +44,16 @@ const CoinsList = () => {
             </div>
             {data?.data ? (
                 <div className={styles.pagination}>
-                    <Pagination
+                    <PaginationComponent
                         count={Math.ceil(data?.count / count)}
                         page={pageNumber}
-                        onChange={(_e, page) => changePageNumber(page)}
-                        shape="rounded"
+                        onPageChange={(_e, page) => changePageNumber(page)}
                     />
-                    <FormControl className={styles.form}>
-                        <InputLabel id="select-label">Count</InputLabel>
-                        <Select
-                            labelId="select-label"
-                            value={count}
-                            label="Count"
-                            onChange={(event) => changeCount(+event.target.value)}
-                            className={styles.select}
-                        >
-                            {availableCounts.map((value) => (
-                                <MenuItem key={value} value={value}>
-                                    {value}
-                                </MenuItem>
-                            ))}
-                        </Select>
-                    </FormControl>
+                    <ItemCountSelect
+                        count={count}
+                        availableCounts={availableCounts}
+                        onCountChange={(event) => changeCount(+event.target.value)}
+                    />
                 </div>
             ) : (
                 <></>

@@ -1,14 +1,14 @@
 import React from "react";
 import { PageHeader } from "../../../UI";
-import { Authorize } from "../../../modules/Authorize";
+import { SearchAndFilter } from "../../../modules/SearchAndFilter";
 
-const AuthorizePage: React.FC = () => {
+const PanelPage: React.FC = () => {
     return (
         <>
             <PageHeader title="Admin panel" />
-            <Authorize />
+            <SearchAndFilter />
         </>
     );
 };
 
-export default AuthorizePage;
+export default PanelPage;

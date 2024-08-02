@@ -29,5 +29,5 @@ export const fetchCoinsList = (): Promise<CoinListRespone[]> => {
         offset: (pageNumber - 1) * count,
     };
 
-    return apiRequest.get<CoinListRespone[]>("/list", params);
+    return apiRequest.get<CoinListRespone[]>("/coin/list", params);
 };

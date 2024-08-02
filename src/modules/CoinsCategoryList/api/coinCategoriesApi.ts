@@ -6,5 +6,5 @@ export interface CoinCategory {
 }
 
 export const fetchCoinCategories = (): Promise<CoinCategory[]> => {
-    return apiRequest.get<CoinCategory[]>('/');
+    return apiRequest.get<CoinCategory[]>('/coin/');
 };
