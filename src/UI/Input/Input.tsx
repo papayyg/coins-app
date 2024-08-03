@@ -3,7 +3,7 @@ import styles from "./Input.module.scss";
 
 interface InputProps {
     label: string;
-    value: string;
+    value: string | number;
     type?: string;
     onChange: (value: string) => void;
 }

@@ -4,3 +4,4 @@ export { default as SearchField } from "./SearchField/SearchField";
 export { default as FilterSection } from "./FilterSection/FilterSection";
 export { default as PaginationComponent } from "./PaginationComponent/PaginationComponent";
 export { default as ItemCountSelect } from "./ItemCountSelect/ItemCountSelect";
+export { default as AddCoin } from "./AddCoin/AddCoin";

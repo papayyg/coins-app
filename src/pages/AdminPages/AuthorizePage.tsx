@@ -1,6 +1,6 @@
 import React from "react";
-import { PageHeader } from "../../../UI";
-import { Authorize } from "../../../modules/Authorize";
+import { PageHeader } from "../../UI";
+import { Authorize } from "../../modules/Authorize";
 
 const AuthorizePage: React.FC = () => {
     return (

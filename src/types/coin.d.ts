@@ -1,7 +1,8 @@
 export interface Coin {
-    _id: string;
+    _id?: string;
     name: string;
     denomination: string;
+	shortDescription: string;
     detailedDescription: string;
     price: number;
     year: number;

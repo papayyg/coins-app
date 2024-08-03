@@ -14,7 +14,7 @@ const CoinsList = () => {
 
     useEffect(() => {
         refetch();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [pageNumber, count]);
 
     const availableCounts = useMemo(() => {
@@ -52,7 +52,10 @@ const CoinsList = () => {
                     <ItemCountSelect
                         count={count}
                         availableCounts={availableCounts}
-                        onCountChange={(event) => changeCount(+event.target.value)}
+                        onCountChange={(event) => {
+                            changeCount(+event.target.value);
+                            changePageNumber(1);
+                        }}
                     />
                 </div>
             ) : (

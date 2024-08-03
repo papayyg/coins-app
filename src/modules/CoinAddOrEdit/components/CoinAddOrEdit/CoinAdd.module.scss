@@ -1,0 +1,18 @@
+.container {
+	margin-top: 25px;
+    display: flex;
+    gap: 30px;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.btns {
+	display: flex;
+	gap: 30px;
+	margin-top: auto;
+	justify-content: center;
+}

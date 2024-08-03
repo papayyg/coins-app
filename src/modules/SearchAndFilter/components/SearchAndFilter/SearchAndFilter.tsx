@@ -16,7 +16,7 @@ const SearchAndFilter = () => {
 
     const handleSearch = () => {
         changeCategory("");
-        if (location.pathname !== "/coins") navigate("/coins");
+        if (location.pathname === "/") navigate("/coins");
         queryClient.invalidateQueries({ queryKey: ["coinList"] });
     };
 

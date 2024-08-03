@@ -1,0 +1,19 @@
+.container {
+    margin-top: 40px;
+    display: flex;
+	flex-direction: column;
+	gap: 25px;
+}
+
+
+.pagination {
+    display: flex;
+	align-items: center;
+    margin-top: 50px;
+	margin-left: 200px;
+}
+
+.coinContaioner {
+	display: flex;
+	gap: 30px;
+}
